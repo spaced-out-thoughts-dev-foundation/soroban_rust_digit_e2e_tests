@@ -7,9 +7,9 @@ pub struct ContractA;
 #[contractimpl]
 impl ContractA {
     pub fn add(x: i128, y: i128) -> i128 {
-        let Thing_to_return: i128;
-        Thing_to_return = x.checked_add(y).expect("no overflow");
+        let mut Thing_to_return: i128;
+        let mut METHOD_CALL_EXPRESSION_2 = x.checked_add(y);
+        Thing_to_return = METHOD_CALL_EXPRESSION_2.expect("no overflow");
         return Thing_to_return;
     }
 }
-

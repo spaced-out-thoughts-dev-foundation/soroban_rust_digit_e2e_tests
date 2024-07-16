@@ -6,8 +6,7 @@ test: build
 	cargo test
 
 build:
-	cargo build
-	@ls -l target/wasm32-unknown-unknown/release/*.wasm
+	cargo build --release --target wasm32-unknown-unknown
 
 fmt:
 	cargo fmt --all

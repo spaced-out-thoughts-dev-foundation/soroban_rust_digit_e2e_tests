@@ -17,24 +17,26 @@ impl AtomicSwapContract {
         }
         let mut TUPLE_ARG_1_0 = token_a.clone();
         let mut TUPLE_ARG_2_0 = token_b.clone();
-        let mut METHOD_CALL_EXPRESSION_23 = (TUPLE_ARG_1_0, TUPLE_ARG_2_0, amount_a, min_b_for_a);
-        a.require_auth_for_args(METHOD_CALL_EXPRESSION_23.into_val(&env));
+        let mut METHOD_CALL_EXPRESSION_25 = (TUPLE_ARG_1_0, TUPLE_ARG_2_0, amount_a, min_b_for_a);
+        let mut METHOD_CALL_ARG_1_20 = METHOD_CALL_EXPRESSION_25.into_val(&env);
+        a.require_auth_for_args(METHOD_CALL_ARG_1_20);
         let mut TUPLE_ARG_1_0 = token_b.clone();
         let mut TUPLE_ARG_2_0 = token_a.clone();
-        let mut METHOD_CALL_EXPRESSION_41 = (TUPLE_ARG_1_0, TUPLE_ARG_2_0, amount_b, min_a_for_b);
-        b.require_auth_for_args(METHOD_CALL_EXPRESSION_41.into_val(&env));
-        move_token(&env, &token_a, &a, &b, &amount_a, &min_a_for_b);
-        move_token(&env, &token_b, &b, &a, &amount_b, &min_b_for_a);
+        let mut METHOD_CALL_EXPRESSION_45 = (TUPLE_ARG_1_0, TUPLE_ARG_2_0, amount_b, min_a_for_b);
+        let mut METHOD_CALL_ARG_1_40 = METHOD_CALL_EXPRESSION_45.into_val(&env);
+        b.require_auth_for_args(METHOD_CALL_ARG_1_40);
+        move_token(&env, &token_a, &a, &b, amount_a, min_a_for_b);
+        move_token(&env, &token_b, &b, &a, amount_b, min_b_for_a);
     }
 }
 
 pub fn move_token(env: &Env, token: &Address, from: &Address, to: &Address, max_spend_amount: &i128, transfer_amount: &i128)  {
     let mut token = token::Client::new(env, token);
     let mut contract_address = env.current_contract_address();
-    token.transfer(from, &contract_address, max_spend_amount);
-    token.transfer(&contract_address, to, transfer_amount);
-    let mut METHOD_CALL_ARG_3_32 = max_spend_amount - transfer_amount;
-    token.transfer(&contract_address, from, &METHOD_CALL_ARG_3_32);
+    token.transfer(from, &contract_address, &max_spend_amount);
+    token.transfer(&contract_address, to, &transfer_amount);
+    let mut METHOD_CALL_ARG_3_42 = & - max_spend_amount;
+    token.transfer(&contract_address, from, METHOD_CALL_ARG_3_42);
 }
 
 

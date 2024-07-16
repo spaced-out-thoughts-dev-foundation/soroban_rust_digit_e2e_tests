@@ -2,8 +2,8 @@
 
 source 'https://rubygems.org'
 
-gem 'dtr_core', '0.10.0'
-gem 'dtr_to_rust', '0.8.1'
+gem 'dtr_core', '0.12.0'
+gem 'dtr_to_rust', '0.14.1'
 gem 'ffi'
 
 group :test do

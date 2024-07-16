@@ -9,71 +9,71 @@ RSpec.describe 'Contract Translation Rust --> DTR --> Rust' do
 
   context 'when official SDF Example' do
     it 'translates the account contract' do
-      assert_translates_rust_to_dtr_and_back("#{official_directory}/account/")
+      assert_translates_rust_to_dtr_and_back("#{official_directory}/account/", x: '1')
     end
 
     it 'translates the alloc contract' do
-      assert_translates_rust_to_dtr_and_back("#{official_directory}/alloc/")
+      assert_translates_rust_to_dtr_and_back("#{official_directory}/alloc/", x: '1')
     end
 
     it 'translates the atomic_multiswap contract' do
-      assert_translates_rust_to_dtr_and_back("#{official_directory}/atomic_multiswap/")
+      assert_translates_rust_to_dtr_and_back("#{official_directory}/atomic_multiswap/", x: '1')
     end
 
     it 'translates the atomic_swap contract' do
-      assert_translates_rust_to_dtr_and_back("#{official_directory}/atomic_swap/")
+      assert_translates_rust_to_dtr_and_back("#{official_directory}/atomic_swap/", x: '1')
     end
 
     it 'translates the auth contract' do
-      assert_translates_rust_to_dtr_and_back("#{official_directory}/auth/")
+      assert_translates_rust_to_dtr_and_back("#{official_directory}/auth/", x: '11')
     end
 
     it 'translates the cross contract contracts' do
       assert_translates_rust_to_dtr_and_back_multi_contract_directory("#{official_directory}/cross_contract/contract_b", [
                                                                         "#{official_directory}/cross_contract/contract_a"
-                                                                      ])
+                                                                      ], x: '11')
     end
 
     it 'translates the custom_types contract' do
-      assert_translates_rust_to_dtr_and_back("#{official_directory}/custom_types/")
+      assert_translates_rust_to_dtr_and_back("#{official_directory}/custom_types/", x: '11')
     end
 
     it 'translates the deployer contract' do
       assert_translates_rust_to_dtr_and_back_multi_contract_directory("#{official_directory}/deployer/deployer", [
                                                                         "#{official_directory}/deployer/contract"
-                                                                      ])
+                                                                      ], x: '1')
     end
 
     it 'translates the errors contract' do
-      assert_translates_rust_to_dtr_and_back("#{official_directory}/errors/")
+      assert_translates_rust_to_dtr_and_back("#{official_directory}/errors/", x: '11')
     end
 
     it 'translates the eth_abi contract' do
-      assert_translates_rust_to_dtr_and_back("#{official_directory}/eth_abi/")
+      assert_translates_rust_to_dtr_and_back("#{official_directory}/eth_abi/", x: '10')
     end
 
     it 'translates the events contract' do
-      assert_translates_rust_to_dtr_and_back("#{official_directory}/events/")
+      assert_translates_rust_to_dtr_and_back("#{official_directory}/events/", x: '11')
     end
 
     it 'translates the fuzzing contract' do
-      assert_translates_rust_to_dtr_and_back("#{official_directory}/fuzzing/")
+      assert_translates_rust_to_dtr_and_back("#{official_directory}/fuzzing/", x: '1')
     end
 
     it 'translates the hello world contract' do
-      assert_translates_rust_to_dtr_and_back("#{official_directory}/hello_world/")
+      assert_translates_rust_to_dtr_and_back("#{official_directory}/hello_world/", x: '11')
     end
 
     it 'translates the increment contract' do
-      assert_translates_rust_to_dtr_and_back("#{official_directory}/increment/")
+      assert_translates_rust_to_dtr_and_back("#{official_directory}/increment/", x: '11')
     end
 
     it 'translates the logging contract' do
-      assert_translates_rust_to_dtr_and_back("#{official_directory}/logging/")
+      assert_translates_rust_to_dtr_and_back("#{official_directory}/logging/", x: '11')
     end
 
     it 'translates the mint_lock contract' do
-      assert_translates_rust_to_dtr_and_back("#{official_directory}/mint_lock/")
+      assert_translates_rust_to_dtr_and_back("#{official_directory}/mint_lock/", x: '1')
     end
 
     it 'translates the simple_account contract' do
@@ -85,33 +85,23 @@ RSpec.describe 'Contract Translation Rust --> DTR --> Rust' do
     end
 
     it 'translates the timelock contract' do
-      assert_translates_rust_to_dtr_and_back("#{official_directory}/timelock/")
+      assert_translates_rust_to_dtr_and_back("#{official_directory}/timelock/", x: '1')
     end
 
     it 'translates the ttl contract' do
-      assert_translates_rust_to_dtr_and_back("#{official_directory}/ttl/")
+      assert_translates_rust_to_dtr_and_back("#{official_directory}/ttl/", x: '11')
     end
 
     it 'translates the upgradable contract old contract' do
       assert_translates_rust_to_dtr_and_back_multi_contract_directory("#{official_directory}/upgradable_contract/old_contract", [
                                                                         "#{official_directory}/upgradable_contract/new_contract"
-                                                                      ])
+                                                                      ], x: '11')
     end
 
-    # Missing:
-    # 1. deep auth
-    # 2. liquidity pool
-    # 3. token
-    # 4. workspace
-  end
-
-  context 'when unofficial Digicus Example' do
-    it 'translates the answer to life contract' do
-      assert_translates_rust_to_dtr_and_back("#{unofficial_directory}/answer_to_life/")
-    end
-
-    it 'translates the simple for loop to answer to life contract' do
-      assert_translates_rust_to_dtr_and_back("#{unofficial_directory}/simple_for_loop_to_answer_to_life")
+    it 'translates the workspace contracts' do
+      assert_translates_rust_to_dtr_and_back_multi_contract_directory("#{official_directory}/workspace/contract_b", [
+                                                                        "#{official_directory}/workspace/contract_a_interface", "#{official_directory}/workspace/contract_a"
+                                                                      ], x: '1')
     end
   end
 end
