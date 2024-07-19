@@ -39,7 +39,7 @@ impl Contract {
         let mut METHOD_CALL_EXPRESSION_7 = env.storage();
         let mut METHOD_CALL_EXPRESSION_6 = METHOD_CALL_EXPRESSION_7.instance();
         let mut INPUT_VALUE_NAME_FOR_LET_1 = METHOD_CALL_EXPRESSION_6.get(&StorageKey::Admin);
-        if let Some(admin = INPUT_VALUE_NAME_FOR_LET_1 {
+        if let Some(admin) = INPUT_VALUE_NAME_FOR_LET_1 {
             admin.require_auth();
         }
         let mut METHOD_CALL_EXPRESSION_29 = env.storage();
@@ -114,7 +114,7 @@ impl Contract {
             let mut CALL_EXPRESSION_ARG_2_213 = minter.clone();
             let mut METHOD_CALL_ARG_1_206 = &StorageKey::Minter(CALL_EXPRESSION_ARG_1_209, CALL_EXPRESSION_ARG_2_213);
             let mut TRY_ASSIGN_RESULT_204 = METHOD_CALL_EXPRESSION_220.get(METHOD_CALL_ARG_1_206);
-            if let  = Some(config {
+            if let TRY_ASSIGN_RESULT_204 = Some(config) {
             }
             let mut METHOD_CALL_EXPRESSION_243 = env.ledger();
             let mut BINARY_EXPRESSION_LEFT_241 = METHOD_CALL_EXPRESSION_243.sequence();

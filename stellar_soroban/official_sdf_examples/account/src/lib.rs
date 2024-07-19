@@ -1,5 +1,5 @@
 #![no_std]
-use soroban_sdk::{contract, contracttype, BytesN, Address, Symbol, symbol_short, contractimpl, Env, Vec, token, auth::Context, IntoVal, unwrap::UnwrapOptimized};
+use soroban_sdk::{contract, contracttype, BytesN, Address, Symbol, symbol_short, contractimpl, Env, Vec, token, HashMap, auth::Context, IntoVal, unwrap::UnwrapOptimized};
 
 #[contracttype]
 #[derive(Clone, Debug, Eq, PartialEq)]
@@ -102,8 +102,8 @@ pub fn authenticate(env: &Env, signature_payload: &BytesN<32>, signatures: &Vec<
 pub fn verify_authorization_policy(env: &Env, context: &Context, curr_contract: &Address, all_signed: bool, spend_left_per_token: &HashMap<Address, i128>) -> Result<(), AccError> {
     let mut Thing_to_return: Result<(), AccError>;
     let mut THING_TO_COMPARE_AGAINST_0 = context;
-    let CONDITIONAL_JUMP_CHECK_2 = context == Context::Contract(c;
-    let CONDITIONAL_JUMP_CHECK_36 = THING_TO_COMPARE_AGAINST_0 == Context::CreateContractHostFn(_;
+    let CONDITIONAL_JUMP_CHECK_2 = context == Context::Contract(c);
+    let CONDITIONAL_JUMP_CHECK_36 = THING_TO_COMPARE_AGAINST_0 == Context::CreateContractHostFn(_);
     if CONDITIONAL_JUMP_CHECK_2 {
         let CONDITIONAL_JUMP_ASSIGNMENT_6 = &c.contract == curr_contract;
         if CONDITIONAL_JUMP_ASSIGNMENT_6 {
@@ -129,7 +129,7 @@ pub fn verify_authorization_policy(env: &Env, context: &Context, curr_contract: 
     }
     let mut METHOD_CALL_ARG_1_87 = contract_context.contract.clone();
     let mut INPUT_VALUE_NAME_FOR_LET_86 = spend_left_per_token.get(METHOD_CALL_ARG_1_87);
-    if let Some(spend_left = INPUT_VALUE_NAME_FOR_LET_86 {
+    if let Some(spend_left) = INPUT_VALUE_NAME_FOR_LET_86 {
         let mut spend_left: Option<i128> = Some(spend_left);
     }
     else {
@@ -138,14 +138,14 @@ pub fn verify_authorization_policy(env: &Env, context: &Context, curr_contract: 
         let mut CALL_EXPRESSION_ARG_1_113 = contract_context.contract.clone();
         let mut METHOD_CALL_ARG_1_110 = &DataKey::SpendLimit(CALL_EXPRESSION_ARG_1_113);
         let mut INPUT_VALUE_NAME_FOR_LET_109 = METHOD_CALL_EXPRESSION_123.get(METHOD_CALL_ARG_1_110);
-        if let Some(limit_left = INPUT_VALUE_NAME_FOR_LET_109 {
+        if let Some(limit_left) = INPUT_VALUE_NAME_FOR_LET_109 {
             let mut spend_left: Option<i128> = Some(limit_left);
         }
         else {
             let mut spend_left: Option<i128> = None;
         }
     }
-    if let Some(spend_left = spend_left {
+    if let Some(spend_left) = spend_left {
         let mut METHOD_CALL_EXPRESSION_154 = contract_context.args.get(2);
         let mut METHOD_CALL_EXPRESSION_153 = METHOD_CALL_EXPRESSION_154.unwrap();
         let mut METHOD_CALL_EXPRESSION_150 = METHOD_CALL_EXPRESSION_153.try_into_val(env);

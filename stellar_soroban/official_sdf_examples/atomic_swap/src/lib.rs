@@ -30,12 +30,12 @@ impl AtomicSwapContract {
     }
 }
 
-pub fn move_token(env: &Env, token: &Address, from: &Address, to: &Address, max_spend_amount: &i128, transfer_amount: &i128)  {
+pub fn move_token(env: &Env, token: &Address, from: &Address, to: &Address, max_spend_amount: i128, transfer_amount: i128)  {
     let mut token = token::Client::new(env, token);
     let mut contract_address = env.current_contract_address();
     token.transfer(from, &contract_address, &max_spend_amount);
     token.transfer(&contract_address, to, &transfer_amount);
-    let mut METHOD_CALL_ARG_3_42 = & - max_spend_amount;
+    let mut METHOD_CALL_ARG_3_42 = &(max_spend_amount - transfer_amount);
     token.transfer(&contract_address, from, METHOD_CALL_ARG_3_42);
 }
 
