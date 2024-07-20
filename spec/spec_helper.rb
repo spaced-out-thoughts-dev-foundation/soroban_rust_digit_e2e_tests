@@ -102,9 +102,36 @@ RSpec.configure do |config|
   #   Kernel.srand config.seed
 end
 
+module OS
+  def self.windows?
+    (/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) != nil
+  end
+
+  def self.mac?
+    (/darwin/ =~ RUBY_PLATFORM) != nil
+  end
+
+  def self.unix?
+    !OS.windows?
+  end
+
+  def self.linux?
+    OS.unix? and !OS.mac?
+  end
+end
+
 module MyRustLib
   extend FFI::Library
-  ffi_lib './librust_to_dtr.dylib'
+
+  if OS.windows?
+    ffi_lib 'window.dll'
+  elsif OS.mac?
+    ffi_lib 'mac_m1.dylib'
+  elsif OS.linux? || OS.unix?
+    ffi_lib 'linux_gnu.so'
+  else
+    raise 'Unsupported OS'
+  end
 
   attach_function :rust_string_to_dtr_string, [:string], :pointer
   attach_function :free_cstring, [:pointer], :void
@@ -129,23 +156,26 @@ def run_cargo_test_in_dir(dir)
   end
 end
 
-def assert_translates_rust_to_dtr_and_back(dir, x: '0')
+def assert_translates_rust_to_dtr_and_back(dir, x: '0', i: 0, t: 0)
   return expect(1).to eq(1) if x == '10'
 
+  puts "\n[#{i}/#{t}] Executing: #{dir}..."
   dtr_code = rust_to_dtr(File.read("#{dir}/src/original.rs"))
-  puts dtr_code
+  puts "\tCompiled from Rust to DTR ✅"
   rust_string = SorobanRustBackend::ContractHandler.generate(DTRCore::Contract.from_dtr_raw(dtr_code))
   rust_string += "\n\nmod test;\n"
   File.write("#{dir}/src/lib.rs", rust_string)
-
+  puts "\tCompiled from DTR to Rust ✅"
   if x == '1'
     expect(1).to eq(1)
   else
     expect(run_cargo_test_in_dir(dir)).to be true
   end
+  puts "\tExecuted Rust test against generated code ✅"
 end
 
-def assert_translates_rust_to_dtr_and_back_multi_contract_directory(primary_directory, sub_directories, x: '0')
+def assert_translates_rust_to_dtr_and_back_multi_contract_directory(primary_directory, sub_directories, x: '0', i: 0,
+                                                                    t: 0)
   # just compile the sub directories
   sub_directories.each do |sub_dir|
     dtr_code = rust_to_dtr(File.read("#{sub_dir}/src/original.rs"))
@@ -153,19 +183,20 @@ def assert_translates_rust_to_dtr_and_back_multi_contract_directory(primary_dire
     File.write("#{sub_dir}/src/lib.rs", rust_string)
   end
 
+  puts "\n[#{i}/#{t}] Executing Multi-Directory. Primary directory #{primary_directory}..."
   dtr_code = rust_to_dtr(File.read("#{primary_directory}/src/original.rs"))
-  puts 'dtr_code:'
-  puts dtr_code
+  puts "\tCompiled from Rust to DTR ✅"
   rust_string = SorobanRustBackend::ContractHandler.generate(DTRCore::Contract.from_dtr_raw(dtr_code))
   rust_string += "\n\nmod test;\n"
   File.write("#{primary_directory}/src/lib.rs", rust_string)
 
   command = "make -C #{primary_directory} build"
   Open3.capture3(command)
-
+  puts "\tCompiled from DTR to Rust ✅"
   if x == '1'
     expect(1).to eq(1)
   else
     expect(run_cargo_test_in_dir(primary_directory)).to be true
   end
+  puts "\tExecuted Rust test against generated code ✅"
 end
