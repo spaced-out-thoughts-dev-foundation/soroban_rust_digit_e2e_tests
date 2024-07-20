@@ -101,7 +101,7 @@ RSpec.describe 'Contract Translation Rust --> DTR --> Rust' do
     it 'translates the workspace contracts' do
       assert_translates_rust_to_dtr_and_back_multi_contract_directory("#{official_directory}/workspace/contract_b", [
                                                                         "#{official_directory}/workspace/contract_a_interface", "#{official_directory}/workspace/contract_a"
-                                                                      ], x: '1', i:, t: 22)
+                                                                      ], x: '1', i: 22, t: 22)
     end
   end
 end
