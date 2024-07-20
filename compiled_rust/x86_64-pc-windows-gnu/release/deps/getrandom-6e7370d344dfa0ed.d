@@ -1,0 +1,11 @@
+/Users/rob/spaced-out-thoughts-dev-foundation/soroban_rust_frontend/target/x86_64-pc-windows-gnu/release/deps/libgetrandom-6e7370d344dfa0ed.rmeta: /Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/lib.rs /Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/error.rs /Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/util.rs /Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/error_impls.rs /Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/windows.rs
+
+/Users/rob/spaced-out-thoughts-dev-foundation/soroban_rust_frontend/target/x86_64-pc-windows-gnu/release/deps/libgetrandom-6e7370d344dfa0ed.rlib: /Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/lib.rs /Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/error.rs /Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/util.rs /Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/error_impls.rs /Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/windows.rs
+
+/Users/rob/spaced-out-thoughts-dev-foundation/soroban_rust_frontend/target/x86_64-pc-windows-gnu/release/deps/getrandom-6e7370d344dfa0ed.d: /Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/lib.rs /Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/error.rs /Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/util.rs /Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/error_impls.rs /Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/windows.rs
+
+/Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/lib.rs:
+/Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/error.rs:
+/Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/util.rs:
+/Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/error_impls.rs:
+/Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/windows.rs:
