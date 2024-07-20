@@ -124,7 +124,7 @@ module MyRustLib
   extend FFI::Library
 
   if OS.windows?
-    ffi_lib 'compiled_rust/x86_64-pc-windows-gnu/release/rust_to_dtr.dll'
+    ffi_lib 'compiled_rust/x86_64-pc-windows-gnu/release/librust_to_dtr.rlib'
   elsif OS.mac?
     ffi_lib 'compiled_rust/release/librust_to_dtr.dylib'
   elsif OS.linux? || OS.unix?

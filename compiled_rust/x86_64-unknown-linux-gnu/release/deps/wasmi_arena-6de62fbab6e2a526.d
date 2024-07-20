@@ -1,0 +1,10 @@
+/Users/rob/spaced-out-thoughts-dev-foundation/soroban_rust_frontend/target/x86_64-unknown-linux-gnu/release/deps/libwasmi_arena-6de62fbab6e2a526.rmeta: /Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasmi_arena-0.4.1/src/lib.rs /Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasmi_arena-0.4.1/src/component_vec.rs /Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasmi_arena-0.4.1/src/dedup.rs /Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasmi_arena-0.4.1/src/guarded.rs
+
+/Users/rob/spaced-out-thoughts-dev-foundation/soroban_rust_frontend/target/x86_64-unknown-linux-gnu/release/deps/libwasmi_arena-6de62fbab6e2a526.rlib: /Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasmi_arena-0.4.1/src/lib.rs /Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasmi_arena-0.4.1/src/component_vec.rs /Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasmi_arena-0.4.1/src/dedup.rs /Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasmi_arena-0.4.1/src/guarded.rs
+
+/Users/rob/spaced-out-thoughts-dev-foundation/soroban_rust_frontend/target/x86_64-unknown-linux-gnu/release/deps/wasmi_arena-6de62fbab6e2a526.d: /Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasmi_arena-0.4.1/src/lib.rs /Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasmi_arena-0.4.1/src/component_vec.rs /Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasmi_arena-0.4.1/src/dedup.rs /Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasmi_arena-0.4.1/src/guarded.rs
+
+/Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasmi_arena-0.4.1/src/lib.rs:
+/Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasmi_arena-0.4.1/src/component_vec.rs:
+/Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasmi_arena-0.4.1/src/dedup.rs:
+/Users/rob/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasmi_arena-0.4.1/src/guarded.rs:
