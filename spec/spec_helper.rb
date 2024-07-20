@@ -124,11 +124,11 @@ module MyRustLib
   extend FFI::Library
 
   if OS.windows?
-    ffi_lib '../compiled_rust/x86_64-pc-windows-gnu/release/rust_to_dtr.dll'
+    ffi_lib 'compiled_rust/x86_64-pc-windows-gnu/release/rust_to_dtr.dll'
   elsif OS.mac?
-    ffi_lib '../compiled_rust/release/librust_to_dtr.dylib'
+    ffi_lib 'compiled_rust/release/librust_to_dtr.dylib'
   elsif OS.linux? || OS.unix?
-    ffi_lib '../compiled_rust/x86_64-unknown-linux-musl/release/librust_to_dtr.rlib'
+    ffi_lib 'compiled_rust/x86_64-unknown-linux-musl/release/librust_to_dtr.rlib'
   else
     raise 'Unsupported OS'
   end
@@ -166,7 +166,7 @@ def assert_translates_rust_to_dtr_and_back(dir, x: '0', i: 0, t: 0)
   rust_string += "\n\nmod test;\n"
   File.write("#{dir}/src/lib.rs", rust_string)
   puts "\tCompiled from DTR to Rust ✅"
-  expect(run_cargo_test_in_dir(dir)).to be true unless x == '1'
+  (expect(run_cargo_test_in_dir(dir)).to be true) unless x == '1'
   puts "\tExecuted Rust test against generated code ✅"
 end
 
@@ -189,6 +189,6 @@ def assert_translates_rust_to_dtr_and_back_multi_contract_directory(primary_dire
   command = "make -C #{primary_directory} build"
   Open3.capture3(command)
   puts "\tCompiled from DTR to Rust ✅"
-  expect(run_cargo_test_in_dir(primary_directory)).to be true unless x == '1'
+  (expect(run_cargo_test_in_dir(primary_directory)).to be true) unless x == '1'
   puts "\tExecuted Rust test against generated code ✅"
 end
