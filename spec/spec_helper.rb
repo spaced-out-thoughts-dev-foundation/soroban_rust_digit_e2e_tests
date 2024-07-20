@@ -124,7 +124,7 @@ module MyRustLib
   extend FFI::Library
 
   if OS.windows?
-    ffi_lib 'window.dll'
+    ffi_lib 'windows.dll'
   elsif OS.mac?
     ffi_lib 'mac_m1.dylib'
   elsif OS.linux? || OS.unix?
