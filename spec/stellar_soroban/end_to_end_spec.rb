@@ -31,7 +31,7 @@ RSpec.describe 'Contract Translation Rust --> DTR --> Rust' do
     it 'translates the cross contract contracts' do
       assert_translates_rust_to_dtr_and_back_multi_contract_directory("#{official_directory}/cross_contract/contract_b", [
                                                                         "#{official_directory}/cross_contract/contract_a"
-                                                                      ], x: '11', i: 6, t: 22)
+                                                                      ], x: '1', i: 6, t: 22)
     end
 
     it 'translates the custom_types contract' do
@@ -95,13 +95,13 @@ RSpec.describe 'Contract Translation Rust --> DTR --> Rust' do
     it 'translates the upgradable contract old contract' do
       assert_translates_rust_to_dtr_and_back_multi_contract_directory("#{official_directory}/upgradable_contract/old_contract", [
                                                                         "#{official_directory}/upgradable_contract/new_contract"
-                                                                      ], x: '11', i: 21, t: 22)
+                                                                      ], x: '1', i: 21, t: 22)
     end
 
     it 'translates the workspace contracts' do
       assert_translates_rust_to_dtr_and_back_multi_contract_directory("#{official_directory}/workspace/contract_b", [
                                                                         "#{official_directory}/workspace/contract_a_interface", "#{official_directory}/workspace/contract_a"
-                                                                      ], x: '1', i: 22, t: 22)
+                                                                      ], x: '1', i:, t: 22)
     end
   end
 end
