@@ -26,6 +26,8 @@ jobs:
       with:
         ruby-version: '3.2.2'
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+    - name: Install musl-tools on Linux
+      run: sudo apt-get update --yes && sudo apt-get install --yes musl-tools musl-dev musl
     - name: Run tests
       run: bundle exec rspec
 
