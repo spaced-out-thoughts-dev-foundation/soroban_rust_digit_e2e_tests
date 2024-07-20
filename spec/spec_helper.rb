@@ -128,7 +128,7 @@ module MyRustLib
   elsif OS.mac?
     ffi_lib 'compiled_rust/release/librust_to_dtr.dylib'
   elsif OS.linux? || OS.unix?
-    ffi_lib 'compiled_rust/x86_64-unknown-linux-musl/release/librust_to_dtr.rlib'
+    ffi_lib 'compiled_rust/x86_64-unknown-linux-gnu/release/librust_to_dtr.so'
   else
     raise 'Unsupported OS'
   end
